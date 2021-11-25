@@ -15,6 +15,7 @@ public class MyScheduler {
                 .withIdentity("myJob").build();
         CronTrigger trigger = TriggerBuilder.newTrigger()
                 .withIdentity("myTrigger")
+                // 设置每5秒执行一次
                 .withSchedule(CronScheduleBuilder.cronSchedule("*/5 * * * * ?")).build();
         SchedulerFactory factory = new StdSchedulerFactory();
         scheduler = factory.getScheduler();
